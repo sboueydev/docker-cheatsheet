@@ -52,11 +52,17 @@ Listed below are some of my most commonly used commands / workflows.
 ### Example Dockerfile
 
 FROM node:alpine
+
 RUN apk update && apk upgrade && apk add nano
+
 RUN npm install -g gulp
+
 WORKDIR /usr/src/app
+
 COPY package.json /usr/src/app/package.json
+
 RUN npm install
+
 COPY . /usr/src/app
 
 *Note: When using an alpine image base you must use apk instead of apt.*
