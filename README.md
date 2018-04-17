@@ -16,6 +16,7 @@ Listed below are some of my most commonly used commands / workflows.
 		
 - Run (create and start) container
 	- docker run -ti --name containername imagename:tag command 
+	- docker run -ti -v "($pwd)"/absolutepathincontainer/ --name containername imagename:tag command
 	*Note: this creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.*
 
 - Exit the terminal by either typing exit or pressing CTRL + d
