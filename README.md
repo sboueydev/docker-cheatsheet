@@ -17,7 +17,17 @@ Listed below are some of my most commonly used commands / workflows.
 - Run (create and start) container
 	- docker run -ti --name containername imagename:tag command 
 	- docker run -ti -v "$(pwd)"/absolutepathincontainer/ --name containername imagename:tag command
-	*Note: this creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.*
+	- docker run -ti \
+          --name containername \
+          --mount source=nameofvolume,target=/nameoftargetincontainer \
+          imagename:tag
+	- Or do the same thing as above with -v
+		-  docker run -ti \
+                   --name containername \
+                   -v nameofvolume:/nameoftargetincontainer \
+                   imagename:tag
+		   
+	*Note: this creates an interactive environment. I usually use either sh or bash as the command in order to acces the container from the command line.You can find the volumes in var/lib/docker/volumes*
 
 - Exit the terminal by either typing exit or pressing CTRL + d
 	
